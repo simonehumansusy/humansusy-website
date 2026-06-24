@@ -3,10 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>human susy</title>
+    <title>human susy — AI adoption that strengthens people</title>
+    <meta name="description" content="human susy advises organisations on adopting AI in ways that strengthen their people and how they work. Strategy, diagnosis, and training for organisations of 20 to 200 people.">
+    <meta name="author" content="Simone Solazzo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #F5F0EB;
+            --heading: #1A1A2E;
+            --body: #2D2D3D;
+            --body-light: #4A4A5A;
+            --accent: #3A5A7C;
+            --border: rgba(26, 26, 46, 0.12);
+            --font-heading: 'Merriweather', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--body);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Gradient blobs */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .blob-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(120, 150, 210, 0.3) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(180, 155, 200, 0.25) 0%, transparent 70%);
+            top: 40%;
+            left: -150px;
+        }
+
+        .blob-3 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(200, 170, 155, 0.2) 0%, transparent 70%);
+            top: 65%;
+            right: -80px;
+        }
+
+        .blob-4 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(150, 180, 190, 0.2) 0%, transparent 70%);
+            bottom: 5%;
+            left: -50px;
+        }
+
+        /* Layout */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Section 1: Opening */
+        .opening {
+            padding: 120px 0 80px;
+        }
+
+        .opening h1 {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--heading);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .opening .tagline {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--body);
+            max-width: 560px;
+        }
+
+        /* Section 2: The problem */
+        .problem h2,
+        .perspective h2,
+        .approach h2,
+        .about h2,
+        .contact h2 {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--heading);
+            line-height: 1.3;
+            margin-bottom: 28px;
+        }
+
+        .problem p,
+        .perspective p,
+        .approach > .container > p {
+            margin-bottom: 20px;
+        }
+
+        .pullquote {
+            border-left: 3px solid var(--accent);
+            padding: 4px 0 4px 24px;
+            margin: 36px 0;
+            font-family: var(--font-heading);
+            font-size: 19px;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--heading);
+        }
+
+        /* Section 3: The perspective */
+        .perspective {
+            padding: 60px 0;
+        }
+
+        /* Section 4: How I work */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 36px;
+        }
+
+        .service-block {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .service-block h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--heading);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .service-block p {
+            font-size: 14px;
+            line-height: 1.65;
+            color: var(--body);
+        }
+
+        /* Section 5: About */
+        .about-layout {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .about-photo {
+            width: 160px;
+            min-width: 160px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        /* Section 6: Contact */
+        .contact {
+            padding-bottom: 120px;
+        }
+
+        .contact p {
+            margin-bottom: 16px;
+        }
+
+        .contact-links {
+            margin-top: 24px;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .contact-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-links a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--border);
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--body-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .opening {
+                padding: 80px 0 60px;
+            }
+
+            .opening h1 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .about-layout {
+                flex-direction: column;
+                align-items: center;
+                text-align: left;
+            }
+
+            .about-photo {
+                width: 140px;
+                min-width: 140px;
+            }
+
+            .pullquote {
+                font-size: 17px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>human susy</h1>
-    <p>Something is coming.</p>
+
+    <!-- Background blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+
+    <!-- Section 1: Opening -->
+    <section class="opening">
+        <div class="container">
+            <h1>human susy</h1>
+            <p class="tagline">Advising organisations of 20 to 200 people on how to adopt AI in ways that strengthen their people and how they work. Strategy consulting, organisational diagnosis, and training, grounded in research and built for your reality.</p>
+        </div>
+    </section>
+
+    <!-- Section 2: The problem -->
+    <section class="problem">
+        <div class="container">
+            <h2>AI is genuinely valuable. Most organisations are not set up to capture that value.</h2>
+
+            <p>AI tools are creating real operational improvements and your competitors and clients are moving. The opportunity is concrete and worth pursuing. But for most organisations between 20 and 200 people, there is no structured approach to capture it. People are already using ChatGPT, Copilot, or other tools on their own initiative. There is no policy, no shared learning, no visibility on what is happening. What should be an organisational decision is unfolding as individual improvisation.</p>
+
+            <div class="pullquote">The question is not whether your organisation will adopt AI. It is whether that adoption happens by design or by accident.</div>
+
+            <p>Meanwhile, the people questions keep getting deferred. How does this change what we expect from our teams? What happens to the skills we spent years building? Who is thriving with these tools and who is quietly disengaging? These questions do not resolve themselves. Left unaddressed, they show up as adoption stalling, as uneven capability across teams, as the slow erosion of what made your organisation work well in the first place.</p>
+
+            <p>What is available externally does not help. Enterprise consultancies are too expensive and too generic. Technology vendors sell tools, not organisational change. AI literacy workshops teach button-clicking, not judgment. None of it is built for an organisation of your scale, where every person matters and the margin for getting it wrong is thin.</p>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- Section 3: The perspective -->
+    <section class="perspective">
+        <div class="container">
+            <h2>A human sustainable approach</h2>
+
+            <p>I call this approach human sustainability: AI adoption designed so the technology strengthens what people can do, rather than quietly replacing or overloading it. It is grounded in research on how organisations and people actually work, and shaped by studying how real organisations have navigated AI adoption, what worked, what did not, and why. It is not a framework you need to learn before we start. It is the lens I bring to your situation.</p>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- Section 4: How I work -->
+    <section class="approach">
+        <div class="container">
+            <h2>How I work</h2>
+
+            <p>Every engagement starts with understanding your situation: where your organisation is with AI, what your people are experiencing, and what you are actually trying to achieve. From that understanding, I design interventions that fit your scale, your culture, and your operational reality. The work draws on operational transformation, change management, and AI adoption methodology, and it always stays concrete.</p>
+
+            <div class="services-grid">
+                <div class="service-block">
+                    <h3>Diagnosis</h3>
+                    <p>A structured assessment of where your organisation stands with AI adoption and what it means for your people, processes, and performance. You walk away with a clear picture and concrete recommendations.</p>
+                </div>
+                <div class="service-block">
+                    <h3>Training</h3>
+                    <p>Building capability in your teams to work with AI effectively and sustainably. Not button-clicking workshops, but developing the judgment, boundaries, and practices that make adoption actually work.</p>
+                </div>
+                <div class="service-block">
+                    <h3>Transformation</h3>
+                    <p>Strategy design, deployment support, and change management as one integrated engagement. From diagnostic findings through to adoption being operational, with a single point of accountability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- Section 5: About Simone -->
+    <section class="about">
+        <div class="container">
+            <h2>About Simone</h2>
+
+            <div class="about-layout">
+                <img src="simone.jpg" alt="Simone Solazzo" class="about-photo">
+                <div class="about-text">
+                    <p>I studied management engineering at Politecnico di Milano, then spent two years in a boutique management consultancy advising banks and insurance companies on strategy and operations. From there I joined sennder, a fast-scaling technology company in logistics, where I grew from associate to head of operational excellence, leading transformation programmes across global operations at director level.</p>
+
+                    <p>That experience taught me what organisational change looks like from the inside: not as a framework on a slide, but as the daily work of making new ways of operating actually stick with real teams under real pressure. I started human susy because I saw organisations adopting AI without anyone asking whether the adoption was designed to work for the people doing the work. I believe it should be.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><hr class="divider"></div>
+
+    <!-- Section 6: Contact -->
+    <section class="contact">
+        <div class="container">
+            <h2>Let's talk</h2>
+
+            <p>If you want AI adoption to be part of your 2027 plans, the time to start the conversation is now. Diagnostic and strategy work in Q4 2026 means your decisions are grounded before budget season begins.</p>
+
+            <p>A first conversation takes 30 minutes. I listen, understand your situation, and we figure out together whether working together makes sense. No pitch, no commitment.</p>
+
+            <div class="contact-links">
+                <a href="mailto:simone@humansusy.eu">simone@humansusy.eu</a>
+                <a href="https://www.linkedin.com/in/simonesolazzo/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2026 human susy
+        </div>
+    </footer>
+
 </body>
 </html>
