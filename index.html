@@ -194,36 +194,42 @@
             color: var(--heading);
         }
 
+        /* Challenge points with coloured labels */
         .challenge-points {
             margin-top: 36px;
         }
 
-        .challenge-points .pullquote {
-            font-size: 17px;
-            margin: 28px 0;
+        .challenge-point {
+            margin-bottom: 32px;
         }
 
-        .challenge-points .pullquote:nth-child(1) {
-            border-left-color: #6E82D2;
+        .challenge-point:last-child {
+            margin-bottom: 0;
         }
 
-        .challenge-points .pullquote:nth-child(2) {
-            border-left-color: #AF8CD2;
+        .challenge-label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
         }
 
-        .challenge-points .pullquote:nth-child(3) {
-            border-left-color: #DC969E;
+        .challenge-point p {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--heading);
+            margin: 0;
         }
 
-        .challenge-points .pullquote:nth-child(4) {
-            border-left-color: #78C8BE;
-        }
-
-        .challenge-points .pullquote:last-child {
-            font-size: 20px;
-            margin-top: 40px;
-            border-left-color: var(--accent);
-        }
+        .label-compliance { color: #6E82D2; }
+        .label-governance { color: #AF8CD2; }
+        .label-investment { color: #DC969E; }
+        .label-people { color: #78C8BE; }
+        .label-methodology { color: #3A5A7C; }
 
         /* Section 4: Services grid */
         .services-grid {
@@ -380,15 +386,30 @@
             <p>AI is creating real operational value and customer expectations are shifting fast. But adopting AI well at organisational scale, in a way that accounts for the impact on people and quality of work, is a challenge most organisations are still figuring out.</p>
 
             <div class="challenge-points">
-                <div class="pullquote">Compliance. People are using AI tools on their own initiative, whether or not the organisation has taken an official decision. This creates regulatory exposure (EU AI Act and GDPR) on data processing, transparency and risk classification.</div>
+                <div class="challenge-point">
+                    <div class="challenge-label label-compliance">Compliance</div>
+                    <p>People are using AI tools on their own initiative, whether or not the organisation has taken an official decision. This creates regulatory exposure (EU AI Act and GDPR) on data processing, transparency and risk classification.</p>
+                </div>
 
-                <div class="pullquote">Governance. Effective adoption needs shared rules: when to use AI tools, when to trust their output and how to ensure people stay in control of decisions. Quality standards for AI-assisted work need to be defined and enforced.</div>
+                <div class="challenge-point">
+                    <div class="challenge-label label-governance">Governance</div>
+                    <p>Effective adoption needs shared rules: when to use AI tools, when to trust their output and how to ensure people stay in control of decisions. Quality standards for AI-assisted work need to be defined and enforced.</p>
+                </div>
 
-                <div class="pullquote">Investment. A coordinated approach to AI adoption requires a significant investment of time and money, to learn, experiment, build, deploy and maintain. And has a lot at stake: employee engagement, operational quality, client trust.</div>
+                <div class="challenge-point">
+                    <div class="challenge-label label-investment">Investment</div>
+                    <p>A coordinated approach to AI adoption requires a significant investment of time and money, to learn, experiment, build, deploy and maintain. And has a lot at stake: employee engagement, operational quality, client trust.</p>
+                </div>
 
-                <div class="pullquote">People. A successful adoption depends on people engaging with the change. As workflows, workloads and skills evolve, the organisation's long term capacity depends on whether its people grow with the technology.</div>
+                <div class="challenge-point">
+                    <div class="challenge-label label-people">People</div>
+                    <p>A successful adoption depends on people engaging with the change. As workflows, workloads and skills evolve, the organisation's long term capacity depends on whether its people grow with the technology.</p>
+                </div>
 
-                <div class="pullquote">Methodology. Organisations need a realistic view on what benefits, costs, risks and change plan. This should be grounded on the specific organisation reality and vision, and cannot leave change management as an afterthought.</div>
+                <div class="challenge-point">
+                    <div class="challenge-label label-methodology">Methodology</div>
+                    <p>Organisations need a realistic view on what benefits, costs, risks and change plan. This should be grounded on the specific organisation reality and vision, and cannot leave change management as an afterthought.</p>
+                </div>
             </div>
 
             <p>AI adoption requires regulatory compliance, significant investment and careful attention to the people doing the work. It should happen by design, not by accident.</p>
