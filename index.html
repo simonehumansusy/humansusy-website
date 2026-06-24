@@ -18,6 +18,7 @@
 
         :root {
             --bg: #F5F0EB;
+            --bg-alt: #E8E0D6;
             --heading: #1A1A2E;
             --body: #2D2D3D;
             --body-light: #4A4A5A;
@@ -40,145 +41,214 @@
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Gradient blobs */
-        .blob {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
+        /* Gradient blobs — absolute, scroll with page, multi-coloured */
+        .blobs-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.6;
         }
 
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+        }
+
+        /* Blue — top right */
         .blob-1 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(120, 150, 210, 0.3) 0%, transparent 70%);
-            top: -100px;
+            width: 750px;
+            height: 750px;
+            background: radial-gradient(circle, rgba(100, 130, 220, 0.75) 0%, transparent 70%);
+            top: -60px;
             right: -100px;
         }
 
+        /* Lavender/purple — left side */
         .blob-2 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(180, 155, 200, 0.25) 0%, transparent 70%);
-            top: 40%;
-            left: -150px;
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(175, 140, 210, 0.65) 0%, transparent 70%);
+            top: 22%;
+            left: -180px;
         }
 
+        /* Pink/rose — centre right */
         .blob-3 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(220, 150, 160, 0.60) 0%, transparent 70%);
+            top: 42%;
+            right: -60px;
+        }
+
+        /* Teal/mint — lower left */
+        .blob-4 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(120, 200, 190, 0.60) 0%, transparent 70%);
+            top: 62%;
+            left: -80px;
+        }
+
+        /* Warm peach/amber — centre */
+        .blob-5 {
             width: 450px;
             height: 450px;
-            background: radial-gradient(circle, rgba(200, 170, 155, 0.2) 0%, transparent 70%);
-            top: 65%;
-            right: -80px;
+            background: radial-gradient(circle, rgba(220, 190, 140, 0.55) 0%, transparent 70%);
+            top: 12%;
+            left: 35%;
         }
 
-        .blob-4 {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(150, 180, 190, 0.2) 0%, transparent 70%);
-            bottom: 5%;
-            left: -50px;
+        /* Soft blue — bottom right */
+        .blob-6 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(130, 160, 220, 0.60) 0%, transparent 70%);
+            top: 82%;
+            right: -120px;
+        }
+
+        /* Pink — bottom centre */
+        .blob-7 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(210, 160, 190, 0.55) 0%, transparent 70%);
+            top: 90%;
+            left: 20%;
         }
 
         /* Layout */
         .container {
             position: relative;
             z-index: 1;
-            max-width: 680px;
+            max-width: 760px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
         section {
-            padding: 80px 0;
+            position: relative;
+            padding: 100px 0;
+        }
+
+        section.alt {
+            background-color: var(--bg-alt);
         }
 
         /* Section 1: Opening */
         .opening {
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
         }
 
         .opening h1 {
             font-family: var(--font-heading);
-            font-size: 42px;
+            font-size: 46px;
             font-weight: 400;
             color: var(--heading);
             line-height: 1.2;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             letter-spacing: -0.5px;
         }
 
         .opening .tagline {
-            font-size: 18px;
+            font-size: 19px;
             line-height: 1.7;
             color: var(--body);
-            max-width: 560px;
+            max-width: 620px;
         }
 
-        /* Section 2: The problem */
-        .problem h2,
-        .perspective h2,
-        .approach h2,
-        .about h2,
-        .contact h2 {
+        /* Headings */
+        .section-heading {
             font-family: var(--font-heading);
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 400;
             color: var(--heading);
-            line-height: 1.3;
-            margin-bottom: 28px;
+            line-height: 1.35;
+            margin-bottom: 32px;
         }
 
+        /* Body paragraphs */
         .problem p,
         .perspective p,
         .approach > .container > p {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .pullquote {
             border-left: 3px solid var(--accent);
-            padding: 4px 0 4px 24px;
-            margin: 36px 0;
+            padding: 8px 0 8px 28px;
+            margin: 40px 0;
             font-family: var(--font-heading);
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 300;
             line-height: 1.6;
             color: var(--heading);
         }
 
-        /* Section 3: The perspective */
-        .perspective {
-            padding: 60px 0;
+        .challenge-points {
+            margin-top: 36px;
         }
 
-        /* Section 4: How I work */
+        .challenge-points .pullquote {
+            font-size: 17px;
+            margin: 28px 0;
+        }
+
+        .challenge-points .pullquote:nth-child(1) {
+            border-left-color: #6E82D2;
+        }
+
+        .challenge-points .pullquote:nth-child(2) {
+            border-left-color: #AF8CD2;
+        }
+
+        .challenge-points .pullquote:nth-child(3) {
+            border-left-color: #DC969E;
+        }
+
+        .challenge-points .pullquote:nth-child(4) {
+            border-left-color: #78C8BE;
+        }
+
+        .challenge-points .pullquote:last-child {
+            font-size: 20px;
+            margin-top: 40px;
+            border-left-color: var(--accent);
+        }
+
+        /* Section 4: Services grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 36px;
+            gap: 28px;
+            margin-top: 40px;
         }
 
         .service-block {
             border-left: 2px solid var(--accent);
-            padding-left: 20px;
+            padding-left: 22px;
         }
 
         .service-block h3 {
             font-family: var(--font-heading);
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 400;
             color: var(--heading);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.3;
         }
 
         .service-block p {
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.65;
             color: var(--body);
         }
@@ -186,34 +256,30 @@
         /* Section 5: About */
         .about-layout {
             display: flex;
-            gap: 32px;
+            gap: 36px;
             align-items: flex-start;
         }
 
         .about-photo {
-            width: 160px;
-            min-width: 160px;
+            width: 170px;
+            min-width: 170px;
             border-radius: 8px;
             object-fit: cover;
         }
 
         .about-text p {
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         /* Section 6: Contact */
-        .contact {
-            padding-bottom: 120px;
-        }
-
         .contact p {
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
 
         .contact-links {
-            margin-top: 24px;
+            margin-top: 28px;
             display: flex;
-            gap: 24px;
+            gap: 28px;
             align-items: center;
         }
 
@@ -221,7 +287,7 @@
             color: var(--accent);
             text-decoration: none;
             font-weight: 500;
-            font-size: 15px;
+            font-size: 16px;
             border-bottom: 1px solid transparent;
             transition: border-color 0.2s;
         }
@@ -230,45 +296,44 @@
             border-bottom-color: var(--accent);
         }
 
-        /* Divider */
-        .divider {
-            width: 60px;
-            height: 1px;
-            background: var(--border);
-            margin: 0;
-        }
-
         /* Footer */
         footer {
-            padding: 40px 0;
+            padding: 48px 0;
             text-align: center;
             font-size: 13px;
             color: var(--body-light);
+            background-color: var(--bg-alt);
         }
 
         /* Responsive */
         @media (max-width: 640px) {
             .opening {
-                padding: 80px 0 60px;
+                padding: 90px 0 70px;
             }
 
             .opening h1 {
-                font-size: 32px;
+                font-size: 34px;
+            }
+
+            .opening .tagline {
+                font-size: 17px;
             }
 
             section {
-                padding: 60px 0;
+                padding: 70px 0;
+            }
+
+            .section-heading {
+                font-size: 24px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
-                gap: 28px;
+                gap: 32px;
             }
 
             .about-layout {
                 flex-direction: column;
-                align-items: center;
-                text-align: left;
             }
 
             .about-photo {
@@ -277,7 +342,11 @@
             }
 
             .pullquote {
-                font-size: 17px;
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 0 24px;
             }
         }
     </style>
@@ -285,10 +354,15 @@
 <body>
 
     <!-- Background blobs -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-    <div class="blob blob-4"></div>
+    <div class="blobs-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+        <div class="blob blob-5"></div>
+        <div class="blob blob-6"></div>
+        <div class="blob blob-7"></div>
+    </div>
 
     <!-- Section 1: Opening -->
     <section class="opening">
@@ -299,37 +373,39 @@
     </section>
 
     <!-- Section 2: The problem -->
-    <section class="problem">
+    <section class="problem alt">
         <div class="container">
-            <h2>AI is genuinely valuable. Most organisations are not set up to capture that value.</h2>
+            <h2 class="section-heading">The challenge of AI adoption</h2>
 
-            <p>AI tools are creating real operational improvements and your competitors and clients are moving. The opportunity is concrete and worth pursuing. But for most organisations between 20 and 200 people, there is no structured approach to capture it. People are already using ChatGPT, Copilot, or other tools on their own initiative. There is no policy, no shared learning, no visibility on what is happening. What should be an organisational decision is unfolding as individual improvisation.</p>
+            <p>AI is genuinely valuable. Most organisations are not set up to capture that value. The opportunity is concrete and worth pursuing, but for organisations of 20 to 200 people, the path is rarely clear.</p>
 
-            <div class="pullquote">The question is not whether your organisation will adopt AI. It is whether that adoption happens by design or by accident.</div>
+            <div class="challenge-points">
+                <div class="pullquote">People in your organisation are already using AI tools on their own initiative. Most organisations have no policy, no shared learning, and no visibility on how these tools are being used or what they are changing.</div>
 
-            <p>Meanwhile, the people questions keep getting deferred. How does this change what we expect from our teams? What happens to the skills we spent years building? Who is thriving with these tools and who is quietly disengaging? These questions do not resolve themselves. Left unaddressed, they show up as adoption stalling, as uneven capability across teams, as the slow erosion of what made your organisation work well in the first place.</p>
+                <div class="pullquote">The questions that matter most tend to come last. What does this change about the skills we need? How do we make sure adoption works for everyone, not just the early adopters? How do we know if this is actually making us better?</div>
 
-            <p>What is available externally does not help. Enterprise consultancies are too expensive and too generic. Technology vendors sell tools, not organisational change. AI literacy workshops teach button-clicking, not judgment. None of it is built for an organisation of your scale, where every person matters and the margin for getting it wrong is thin.</p>
+                <div class="pullquote">Without a structured approach, AI adoption happens unevenly. Some teams move fast while others disengage. The gap between intention and reality grows quietly.</div>
+
+                <div class="pullquote">Most of what is available externally is built for a different scale. Enterprise consultancies are too expensive and too generic. Technology vendors sell tools, not organisational change. AI literacy workshops teach features, not judgment.</div>
+
+                <div class="pullquote">The question is not whether your organisation will adopt AI. It is whether that adoption happens by design or by accident.</div>
+            </div>
         </div>
     </section>
-
-    <div class="container"><hr class="divider"></div>
 
     <!-- Section 3: The perspective -->
     <section class="perspective">
         <div class="container">
-            <h2>A human sustainable approach</h2>
+            <h2 class="section-heading">A human sustainable approach</h2>
 
             <p>I call this approach human sustainability: AI adoption designed so the technology strengthens what people can do, rather than quietly replacing or overloading it. It is grounded in research on how organisations and people actually work, and shaped by studying how real organisations have navigated AI adoption, what worked, what did not, and why. It is not a framework you need to learn before we start. It is the lens I bring to your situation.</p>
         </div>
     </section>
 
-    <div class="container"><hr class="divider"></div>
-
     <!-- Section 4: How I work -->
-    <section class="approach">
+    <section class="approach alt">
         <div class="container">
-            <h2>How I work</h2>
+            <h2 class="section-heading">How I work</h2>
 
             <p>Every engagement starts with understanding your situation: where your organisation is with AI, what your people are experiencing, and what you are actually trying to achieve. From that understanding, I design interventions that fit your scale, your culture, and your operational reality. The work draws on operational transformation, change management, and AI adoption methodology, and it always stays concrete.</p>
 
@@ -350,12 +426,10 @@
         </div>
     </section>
 
-    <div class="container"><hr class="divider"></div>
-
     <!-- Section 5: About Simone -->
     <section class="about">
         <div class="container">
-            <h2>About Simone</h2>
+            <h2 class="section-heading">About Simone</h2>
 
             <div class="about-layout">
                 <img src="simone.jpg" alt="Simone Solazzo" class="about-photo">
@@ -368,12 +442,10 @@
         </div>
     </section>
 
-    <div class="container"><hr class="divider"></div>
-
     <!-- Section 6: Contact -->
-    <section class="contact">
+    <section class="contact alt">
         <div class="container">
-            <h2>Let's talk</h2>
+            <h2 class="section-heading">Let's talk</h2>
 
             <p>If you want AI adoption to be part of your 2027 plans, the time to start the conversation is now. Diagnostic and strategy work in Q4 2026 means your decisions are grounded before budget season begins.</p>
 
