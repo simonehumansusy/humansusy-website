@@ -44,7 +44,7 @@
             position: relative;
         }
 
-        /* Gradient blobs — absolute, scroll with page, multi-coloured */
+        /* Gradient blobs */
         .blobs-container {
             position: absolute;
             top: 0;
@@ -63,7 +63,6 @@
             pointer-events: none;
         }
 
-        /* Blue — top right */
         .blob-1 {
             width: 750px;
             height: 750px;
@@ -72,7 +71,6 @@
             right: -100px;
         }
 
-        /* Lavender/purple — left side */
         .blob-2 {
             width: 550px;
             height: 550px;
@@ -81,7 +79,6 @@
             left: -180px;
         }
 
-        /* Pink/rose — centre right */
         .blob-3 {
             width: 500px;
             height: 500px;
@@ -90,7 +87,6 @@
             right: -60px;
         }
 
-        /* Teal/mint — lower left */
         .blob-4 {
             width: 500px;
             height: 500px;
@@ -99,7 +95,6 @@
             left: -80px;
         }
 
-        /* Warm peach/amber — centre */
         .blob-5 {
             width: 450px;
             height: 450px;
@@ -108,7 +103,6 @@
             left: 35%;
         }
 
-        /* Soft blue — bottom right */
         .blob-6 {
             width: 500px;
             height: 500px;
@@ -117,7 +111,6 @@
             right: -120px;
         }
 
-        /* Pink — bottom centre */
         .blob-7 {
             width: 400px;
             height: 400px;
@@ -197,6 +190,7 @@
         /* Challenge points with coloured labels */
         .challenge-points {
             margin-top: 36px;
+            margin-bottom: 40px;
         }
 
         .challenge-point {
@@ -206,12 +200,7 @@
         .challenge-point:last-child {
             margin-bottom: 0;
         }
-        
-        .challenge-points {
-            margin-top: 36px;
-            margin-bottom: 40px;
-        }
-        
+
         .challenge-label {
             font-family: var(--font-body);
             font-size: 12px;
@@ -236,7 +225,7 @@
         .label-people { color: #78C8BE; }
         .label-methodology { color: #3A5A7C; }
 
-        /* Section 4: Services grid */
+        /* Section 4: Services grid — coloured labels, horizontal */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -245,17 +234,16 @@
         }
 
         .service-block {
-            border-left: 2px solid var(--accent);
-            padding-left: 22px;
+            padding: 0;
         }
 
-        .service-block h3 {
-            font-family: var(--font-heading);
-            font-size: 19px;
-            font-weight: 400;
-            color: var(--heading);
-            margin-bottom: 12px;
-            line-height: 1.3;
+        .service-label {
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
         .service-block p {
@@ -263,6 +251,10 @@
             line-height: 1.65;
             color: var(--body);
         }
+
+        .label-diagnosis { color: #6E82D2; }
+        .label-training { color: #AF8CD2; }
+        .label-transformation { color: #78C8BE; }
 
         /* Section 5: About */
         .about-layout {
@@ -425,7 +417,7 @@
     <!-- Section 3: The perspective -->
     <section class="perspective">
         <div class="container">
-            <h2 class="section-heading">An approach grounded on human sustainability</h2>
+            <h2 class="section-heading">An approach grounded in human sustainability</h2>
 
             <p>Most AI consultancies focus on the technology and treat the impact on people as a problem to manage, not the objective of the work. Human susy starts from the people: how can their work be improved? How can their capabilities grow to strengthen the organisation? How can they be involved in the decisions affecting their work? These are the questions that determine whether a transformation delivers lasting value or stalls after the pilot. This approach is grounded in the concept of human sustainability and built on a library of documented AI adoption cases across industries, studying what worked, what did not, and why.</p>
         </div>
@@ -436,20 +428,20 @@
         <div class="container">
             <h2 class="section-heading">How I work</h2>
 
-            <p>Every engagement starts with understanding your situation: where your organisation is with AI, what your people are experiencing, and what you are actually trying to achieve. From that understanding, I design interventions that fit your scale, your culture, and your operational reality. The work draws on operational transformation, change management, and AI adoption methodology, and it always stays concrete.</p>
+            <p>Every engagement starts with understanding the specific context: how is AI used in the organisation, how are people experiencing it, and what is the goal of the adoption. From that understanding, I design an action plan that fits the scale of the organisation, its culture and operational reality. The work draws on operational transformation, change management and AI adoption methodology, and it always stays concrete and outcome driven.</p>
 
             <div class="services-grid">
                 <div class="service-block">
-                    <h3>Diagnosis</h3>
-                    <p>A structured assessment of where your organisation stands with AI adoption and what it means for your people, processes, and performance. You walk away with a clear picture and concrete recommendations.</p>
+                    <div class="service-label label-diagnosis">Diagnosis</div>
+                    <p>A structured assessment of the organisation across three dimensions: processes, data and people. Whether AI adoption is being planned, is underway or has been deployed, the goal is to understand how the three dimensions interact and where the real opportunities and risks are.</p>
                 </div>
                 <div class="service-block">
-                    <h3>Training</h3>
-                    <p>Building capability in your teams to work with AI effectively and sustainably. Not button-clicking workshops, but developing the judgment, boundaries, and practices that make adoption actually work.</p>
+                    <div class="service-label label-training">Training</div>
+                    <p>Building the judgment, boundaries and practices that enable teams to work with AI effectively and sustainably. Content and format are tailored to the specific context and audience.</p>
                 </div>
                 <div class="service-block">
-                    <h3>Transformation</h3>
-                    <p>Strategy design, deployment support, and change management as one integrated engagement. From diagnostic findings through to adoption being operational, with a single point of accountability.</p>
+                    <div class="service-label label-transformation">Transformation</div>
+                    <p>Strategy design, deployment support and change management as one integrated engagement, scoped from diagnostic findings through to adoption being operational.</p>
                 </div>
             </div>
         </div>
