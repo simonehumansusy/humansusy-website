@@ -6,8 +6,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>human susy - consulting on human sustainable AI adoption</title>
-    <meta name="description" content="human susy supports small and medium organisations with AI adoption that strengthen people. Services range from diagnostic and strategy to design, deployment and training.">
+    <title>human susy, consulting on AI adoption with a positive return</title>
+    <meta name="description" content="I help small and medium organisations in the Netherlands choose the right AI use cases and make sure the tools are actually adopted, with training, diagnostic and transformation support.">
     <meta name="author" content="Simone Solazzo">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,11 +106,36 @@
             letter-spacing: -0.5px;
         }
 
+        .opening .lead {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.45;
+            color: var(--heading);
+            max-width: 620px;
+            margin-bottom: 20px;
+        }
+
         .opening .tagline {
             font-size: 19px;
             line-height: 1.7;
             color: var(--body);
             max-width: 620px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 32px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .hero-cta:hover {
+            border-bottom-color: var(--accent);
         }
 
         /* Headings */
@@ -125,8 +150,8 @@
 
         /* Body paragraphs */
         .problem p,
-        .perspective p,
-        .approach > .container > p {
+        .approach > .container > p,
+        .services > .container > p {
             margin-bottom: 22px;
         }
 
@@ -141,7 +166,7 @@
             color: var(--heading);
         }
 
-        /* Challenge points */
+        /* Labelled points (challenges and conditions) */
         .challenge-points {
             margin-top: 36px;
             margin-bottom: 40px;
@@ -168,18 +193,56 @@
             margin: 0;
         }
 
-        .label-compliance { color: #6E82D2; }
-        .label-governance { color: #AF8CD2; }
-        .label-investment { color: #DC969E; }
-        .label-people { color: #78C8BE; }
-        .label-methodology { color: #3A5A7C; }
+        .dimension-list {
+            list-style: none;
+            margin-top: 12px;
+        }
 
-        /* Section 4: Services grid */
+        .dimension-list li {
+            font-family: var(--font-heading);
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--body);
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .dimension-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #78C8BE;
+        }
+
+        .dimension-list em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--heading);
+        }
+
+        .label-rules { color: #6E82D2; }
+        .label-results { color: #AF8CD2; }
+        .label-managers { color: #DC969E; }
+        .label-workload { color: #78C8BE; }
+        .label-return { color: #3A5A7C; }
+
+        .label-value { color: #6E82D2; }
+        .label-process { color: #DC969E; }
+        .label-people { color: #78C8BE; }
+
+        /* Services grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
-            margin-top: 40px;
+            margin-top: 8px;
+            margin-bottom: 40px;
         }
 
         .service-block { padding: 0; }
@@ -199,11 +262,11 @@
             color: var(--body);
         }
 
-        .label-diagnosis { color: #6E82D2; }
         .label-training { color: #AF8CD2; }
+        .label-diagnostic { color: #6E82D2; }
         .label-transformation { color: #78C8BE; }
 
-        /* Section 5: About — option B layout */
+        /* About */
         .about-header {
             display: flex;
             align-items: center;
@@ -238,7 +301,7 @@
             margin-bottom: 18px;
         }
 
-        /* Section 6: Contact */
+        /* Contact */
         .contact p {
             margin-bottom: 18px;
         }
@@ -246,6 +309,7 @@
         .contact-links {
             margin-top: 28px;
             display: flex;
+            flex-wrap: wrap;
             gap: 28px;
             align-items: center;
         }
@@ -276,12 +340,14 @@
         @media (max-width: 640px) {
             .opening { padding: 90px 0 70px; }
             .opening h1 { font-size: 34px; }
+            .opening .lead { font-size: 20px; }
             .opening .tagline { font-size: 17px; }
             section { padding: 70px 0; }
             .section-heading { font-size: 24px; }
             .services-grid { grid-template-columns: 1fr; gap: 32px; }
-            .pullquote { font-size: 18px; }
+            .pullquote { font-size: 18px; padding-left: 20px; }
             .container { padding: 0 24px; }
+            .contact-links { gap: 16px 28px; }
         }
     </style>
 </head>
@@ -301,110 +367,143 @@
     <section class="opening">
         <div class="container">
             <h1>human susy</h1>
-            <p class="tagline">A consulting practice founded to support small and medium organisations (20 to 200 employees), profit and non, with AI adoption. The working approach is grounded on human sustainability and translates it into strategy, organisational diagnosis and change management. Founded by Simone Solazzo.</p>
+            <p class="lead">AI is changing work. People shape what it becomes.</p>
+            <p class="tagline">I help organisations of 20 to 200 people in the Netherlands (companies, non-profits, schools) invest in the right AI use cases and make sure the tools are adopted, with attention to people's skills, workload and motivation.</p>
+            <a href="#contact" class="hero-cta">Plan a first conversation &rarr;</a>
         </div>
     </section>
 
     <!-- Section 2: Challenges -->
     <section class="problem alt">
         <div class="container">
-            <h2 class="section-heading">Challenges of AI adoption</h2>
+            <h2 class="section-heading">Critical challenges of AI adoption</h2>
 
-            <p>AI is creating real operational value and customer expectations are shifting fast. But adopting AI at organisational scale, accounting for the impact on people and quality of work, is a challenge most organisations are still figuring out.</p>
+            <p>Some organisations haven't decided anything yet, while their people already use AI on their own. Others are experimenting, rolling out, or have rolled out and are still waiting for the results. The stage differs, but the problems come back to the same few.</p>
 
             <div class="challenge-points">
                 <div class="challenge-point">
-                    <div class="challenge-label label-compliance">Compliance</div>
-                    <p>People are using AI tools on their own initiative, whether or not the organisation has taken an official decision. This creates regulatory exposure (EU AI Act and GDPR) on data processing, transparency and risk classification.</p>
+                    <div class="challenge-label label-rules">Rules</div>
+                    <p>In most organisations, AI is already in use through sector software or personal accounts on tools like ChatGPT, but without shared rules on what data goes in, which output to trust and who checks it. That creates quality risks and exposure under the EU AI Act and GDPR.</p>
                 </div>
 
                 <div class="challenge-point">
-                    <div class="challenge-label label-governance">Governance</div>
-                    <p>Effective adoption needs shared rules: when to use AI tools, when to trust their output and how to ensure people stay in control of decisions. Quality standards for AI-assisted work need to be defined and enforced.</p>
+                    <div class="challenge-label label-results">Results</div>
+                    <p>Efficiency was promised, but AI tools require supervision and generate additional tasks and complexity. Sometimes they end up in silent non-use.</p>
                 </div>
 
                 <div class="challenge-point">
-                    <div class="challenge-label label-investment">Investment</div>
-                    <p>A coordinated approach to AI adoption requires a significant investment of time and money, to learn, experiment, build, deploy and maintain. And has a lot at stake: employee engagement, operational quality, client trust.</p>
+                    <div class="challenge-label label-managers">Management</div>
+                    <p>Management is expected to lead the change in their teams, without having been equipped for it. Most managers are figuring out AI themselves while being asked to guide others.</p>
                 </div>
 
                 <div class="challenge-point">
-                    <div class="challenge-label label-people">People</div>
-                    <p>A successful adoption depends on people engaging with the change. As workflows, workloads and skills evolve, the organisation's long term capacity depends on whether its people grow with the technology.</p>
+                    <div class="challenge-label label-workload">Workload</div>
+                    <p>When AI saves time, it often turns into more volume rather than better work. Roles change as tasks shift to AI, and people need clarity on what is now expected of them and which skills to keep developing.</p>
                 </div>
 
                 <div class="challenge-point">
-                    <div class="challenge-label label-methodology">Methodology</div>
-                    <p>Organisations need a realistic view on benefits, costs, risks and change plan. This should be grounded on the specific organisation reality and vision, and cannot leave change management as an afterthought.</p>
+                    <div class="challenge-label label-return">Return</div>
+                    <p>Adoption stays below target and the return is hard to prove. Without a baseline, nobody can show whether the investment paid off, and it can end up negative.</p>
                 </div>
             </div>
 
-            <p>AI adoption requires regulatory compliance, significant investment and careful attention to the people doing the work. It should happen by design, not by accident.</p>
-
+            <p>The real cost of AI doesn't sit only in the licence, but especially in the time, attention and change it asks from people. A wrong use case wastes all of it.</p>
         </div>
     </section>
 
-    <!-- Section 3: The perspective -->
-    <section class="perspective">
+    <!-- Section 3: Services -->
+    <section class="services">
         <div class="container">
-            <h2 class="section-heading">An approach grounded in human sustainability</h2>
+            <h2 class="section-heading">How I can help</h2>
 
-            <p>Most AI consultancies focus on the technology and treat the impact on people as a problem to manage, not the objective of the work. Human susy starts from the people: how can their work be improved? How can their capabilities grow to strengthen the organisation? How can they be involved in the decisions affecting their work? These are the questions that determine whether a transformation delivers lasting value or stalls after the pilot. This approach is grounded in the concept of human sustainability and learn from a library of documented AI adoption cases across industries, what worked, what did not, and why.</p>
+            <div class="services-grid">
+                <div class="service-block">
+                    <div class="service-label label-training">Training</div>
+                    <p>Teams that use AI with shared rules and sound judgement. Your people learn how AI works and where it fails, practise on their own work, and agree when to trust, check or skip it. Two sessions a week apart, shaped by an intake with your team, closing with a debrief on where AI could pay back. Also supports the AI literacy the EU AI Act asks for.</p>
+                </div>
+                <div class="service-block">
+                    <div class="service-label label-diagnostic">Diagnostic</div>
+                    <p>A clear picture of where AI pays back, starting from the real work. Through interviews and workflow walkthroughs, I assess current AI use, process and data readiness, and the effect on people. You get prioritised use cases, the gaps to fix first, a baseline to measure return and clear next steps. 4 to 6 weeks, complete on its own.</p>
+                </div>
+                <div class="service-block">
+                    <div class="service-label label-transformation">Transformation</div>
+                    <p>AI that is actually used and pays off. Building on the diagnostic: a roadmap with usage rules, support for teams as adoption takes hold, coaching for managers leading the change, and measuring whether the work got better, not only logins. 3 to 6 months.</p>
+                </div>
+            </div>
+
+            <p>Not sure where to start? We can work it out together in a first conversation.</p>
         </div>
     </section>
 
     <!-- Section 4: How I work -->
     <section class="approach alt">
         <div class="container">
-            <h2 class="section-heading">How I work</h2>
+            <h2 class="section-heading">From the work to the technology</h2>
 
-            <p>Every engagement starts with understanding the specific context: how is AI used in the organisation, how are people experiencing it and what is the goal of the adoption. From that understanding, I design an action plan that fits the scale of the organisation, its culture and operational reality. The work draws on operational transformation, change management and AI adoption methodology, and it stays driven by outcome and centered on people. Services are structured around three types of engagement: training, diagnostic and transformation. </p>
+            <p>Most AI consulting starts from the tool and then manages the resistance. I start from the work: the tasks, the judgement they require, the workload, the skills and who decides. Only then do we choose the technology and design how it is introduced. Adoption mostly fails for people reasons (unclear rules, overload, fear, missing skills, being left out of the decision), and those only become visible when you look at the work first.</p>
 
-            <div class="services-grid">
-                <div class="service-block">
-                    <div class="service-label label-diagnosis">Diagnosis</div>
-                    <p>A structured assessment of the organisation across three dimensions: processes, data and people. Whether AI adoption is being planned, is underway or has been deployed, the goal is to understand how the three dimensions interact and where the real opportunities and risks are.</p>
+            <p>AI pays back only when three conditions hold, so I assess them together.</p>
+
+            <div class="challenge-points">
+                <div class="challenge-point">
+                    <div class="challenge-label label-value">Business value</div>
+                    <p>Which tasks matter for cost, quality or growth, what improving them is worth, and what it costs, including people's time.</p>
                 </div>
-                <div class="service-block">
-                    <div class="service-label label-training">Training</div>
-                    <p>Building the judgment, boundaries and practices that enable teams to work with AI effectively and sustainably. Content and format are adapted to the audience and they can be provided both in-person or remote.</p>
+
+                <div class="challenge-point">
+                    <div class="challenge-label label-process">Processes and data</div>
+                    <p>Whether the workflow is stable and the data reliable enough for AI to work on. AI on a fragile process or poor data fails, whatever the tool.</p>
                 </div>
-                <div class="service-block">
-                    <div class="service-label label-transformation">Transformation</div>
-                    <p>It starts from the findings of the diagnostics and it includes strategy, support on design, deployment and change management.</p>
+
+                <div class="challenge-point">
+                    <div class="challenge-label label-people">People</div>
+                    <p>Whether adoption builds people up or uses them up, across five dimensions:</p>
+                    <ul class="dimension-list">
+                        <li><em>capability:</em> are skills and judgement growing or eroding?</li>
+                        <li><em>participation:</em> do the people affected shape how AI is introduced?</li>
+                        <li><em>equilibrium:</em> does workload stay sustainable, or does freed time become more volume?</li>
+                        <li><em>belonging:</em> do teams adopt together, or is everyone figuring it out alone?</li>
+                        <li><em>equity:</em> are benefits and costs shared fairly across roles?</li>
+                    </ul>
                 </div>
             </div>
+
+            <blockquote class="pullquote">A use case that is valuable and technically ready still fails if people don't adopt it, or if it erodes the skills it depends on.</blockquote>
+
+            <p>The five dimensions come from my research on human sustainability, built on documented AI adoption cases across industries: what worked, what didn't, and why.</p>
         </div>
     </section>
 
-    <!-- Section 5: The founder, Simone -->
+    <!-- Section 5: About -->
     <section class="about">
         <div class="container">
             <div class="about-header">
                 <img src="simone.jpg" alt="Simone Solazzo" class="about-photo">
                 <div>
-                    <p class="about-name">The founder, Simone Solazzo</p>
-                    <p class="about-location">Based in Eindhoven, Netherlands</p>
+                    <p class="about-name">Simone Solazzo</p>
+                    <p class="about-location">Founder &middot; Based in Eindhoven, working in English across the Netherlands</p>
                 </div>
             </div>
 
             <div class="about-text">
-                <p>I hold a Master of Science in Management Engineering from Politecnico di Milano and spent a decade across management consulting and operations. At sennder, a tech company in logistics, I was head of operational excellence, designing and coordinating tech-driven transformations for the Operations team across Europe.</p>
-                <p>Leading tech-driven change across a fast-scaling organisation, I saw how operational transformation reshapes the way people work, what is expected of them and how they experience their role. I also saw that the value and success of that change depend on whether the organisation invests it back into the quality of work or only captures it as short term efficiency gain. That conviction led me to spend a year studying human sustainability in depth, researching how organisations have navigated technological change, AI in particular, what determined whether the people inside them grew stronger and how this affected operational and financial performance.</p>
-                <p>In 2025 I built my own tiny house using ChatGPT as a thinking partner, learning firsthand where AI genuinely helps and where human judgment stays essential.</p>
-                <p>I founded human susy to research and build methodologies to guide organisations with human sustainable developments.</p>
+                <p>I studied management engineering at Politecnico di Milano and started in strategy consulting, working with banking and insurance clients. I then spent almost five years at sennder, a logistics technology company, growing from analyst to head of operational excellence. There I led operational transformations through rapid growth and constant technology change, working across operations, product, data, people and finance to redesign processes and bring new tools into daily work.</p>
+                <p>That work taught me that technology change succeeds or fails with the people doing the work. The same tool can make a team sharper or wear it down, depending on how it is introduced and where the gains go. After a year researching how organisations have navigated technological change, AI in particular, I founded human susy to help organisations get that right.</p>
+                <p>human susy is a young practice, started in 2026, so my client portfolio is still small. What I bring is experience from the inside of technology change: strategy, process and data engineering, product development and change management, working with people at every level, from operators to the executive team. Over the past year I have studied AI technology and how organisations adopt it, what works and what doesn't. Each organisation I work with now gets the commitment of a first client.</p>
+                <p>As a solo consultant, the person you speak with is the person who does the work, alongside your teams rather than from a slide deck.</p>
             </div>
         </div>
     </section>
 
     <!-- Section 6: Contact -->
-    <section class="contact alt">
+    <section class="contact alt" id="contact">
         <div class="container">
-            <h2 class="section-heading">Reach out</h2>
+            <h2 class="section-heading">Let's talk</h2>
 
-            <p>You want to start 2027 with a clear plan for AI adoption and a coherent budget behind it? That starts with a conversation about where your organisation is today and where AI can make a difference.</p>
+            <p>Planning AI for 2027? A good plan and a realistic budget start from where your organisation is today.</p>
 
-            <p>We can have a first conversation of 30 minutes, to understand your situation and see if my approach and services can help. If you would like to read more about the approach or the services, I am happy to share more written information about it.</p>
+            <p>In a first 30-minute conversation, we look at your situation, where AI could make a difference and whether I'm the right fit. If there is a fit, I follow up with a short written proposal. No preparation needed, no obligation.</p>
+
+            <p>Email me to plan it.</p>
 
             <div class="contact-links">
                 <a href="mailto:simone@humansusy.eu">simone@humansusy.eu</a>
@@ -415,7 +514,7 @@
 
     <footer>
         <div class="container">
-            &copy; 2026 human susy
+            &copy; 2026 human susy &middot; Simone Solazzo, Eindhoven &middot; KvK 42098431 &middot; VAT NL005491658B46
         </div>
     </footer>
 <script data-goatcounter="https://humansusy.goatcounter.com/count"
